@@ -20,6 +20,8 @@ public class MenuActivity extends AppCompatActivity {
             sensorHardMode, sensorEasyMode,
             highestScoresBtn;
 
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,11 +75,11 @@ public class MenuActivity extends AppCompatActivity {
         EditText nameEt = nameLayout.findViewById(R.id.nameEt);
         new AlertDialog.Builder(this)
                 .setView(nameLayout)
-                .setTitle("GameAsync Invaders")
-                .setPositiveButton("Start game", (dialogInterface, i) -> {
+                .setTitle("Car Game")
+                .setPositiveButton("Start", (dialogInterface, i) -> {
                     String name = nameEt.getText().toString();
                     if (name.trim().isEmpty()) {
-                        Toast.makeText(MenuActivity.this, "You must enter a name..", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MenuActivity.this, "You must enter a name", Toast.LENGTH_LONG).show();
                     } else {
                         intent.putExtra("name", name);
                         startActivity(intent);
